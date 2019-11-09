@@ -21,4 +21,6 @@ Training Pages Based on `SageMathCell`
 
 ### [&#x1F4D3; &nbsp; Task 3.1.1](https://olgabelitskaya.github.io/it_mini_campus/Task_3_1_1.html) &nbsp; [&#x1F4D3; &nbsp; Task 3.1.2](https://olgabelitskaya.github.io/it_mini_campus/Task_3_1_2.html) &nbsp; [&#x1F4D3; &nbsp; Task 3.2](https://olgabelitskaya.github.io/it_mini_campus/Task_3_2.html) 
 
-### [&#x1F4D3; &nbsp; Task 4.1](https://olgabelitskaya.github.io/it_mini_campus/Task_4_1.html) &nbsp; [&#x1F4D3; &nbsp; Task 4.2.1](https://olgabelitskaya.github.io/it_mini_campus/Task_4_2_1.html) &nbsp; [&#x1F4D3; &nbsp; Task 4.2.2](https://olgabelitskaya.github.io/it_mini_campus/Task_4_2_2.html) &nbsp; [&#x1F4D3; &nbsp; Task 4.2.3](https://olgabelitskaya.github.io/it_mini_campus/Task_4_2_3.html) &nbsp; [&#x1F4D3; &nbsp; Task 4.2.4](https://olgabelitskaya.github.io/it_mini_campus/Task_4_2_4.html) &nbsp; [&#x1F4D3; &nbsp; Task 4.2.5](https://olgabelitskaya.github.io/it_mini_campus/Task_4_2_5.html) 
+### [&#x1F4D3; &nbsp; Task 4.1](https://olgabelitskaya.github.io/it_mini_campus/Task_4_1.html) &nbsp; [&#x1F4D3; &nbsp; Task 4.2.1](https://olgabelitskaya.github.io/it_mini_campus/Task_4_2_1.html) &nbsp; [&#x1F4D3; &nbsp; Task 4.2.2](https://olgabelitskaya.github.io/it_mini_campus/Task_4_2_2.html) 
+
+### [&#x1F4D3; &nbsp; Task 4.2.3](https://olgabelitskaya.github.io/it_mini_campus/Task_4_2_3.html) &nbsp; [&#x1F4D3; &nbsp; Task 4.2.4](https://olgabelitskaya.github.io/it_mini_campus/Task_4_2_4.html) &nbsp; [&#x1F4D3; &nbsp; Task 4.2.5](https://olgabelitskaya.github.io/it_mini_campus/Task_4_2_5.html) 
