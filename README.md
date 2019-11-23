@@ -56,4 +56,13 @@ Training Pages Based on [`SageMathCell`](https://sagecell.sagemath.org)
 
 </details>
 
+<details>
+<summary>View Notebooks</summary>
+    
+### [&#x1F4D3; &nbsp; Task 1.1. Task1.2](https://github.com/OlgaBelitskaya/it_mini_campus/blob/master/Task_1_1_Task_1_2.ipynb)
+### [&#x1F4D3; &nbsp; Task 1.3.1](https://github.com/OlgaBelitskaya/it_mini_campus/blob/master/Task_1_3_1.ipynb)
+
+</details>
+
+    
 <br>[⬆ Back to top](#Contents)
