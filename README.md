@@ -83,6 +83,10 @@ Training Pages Based on [`SageMathCell`](https://sagecell.sagemath.org)
 ### [&#x1F4D3; &nbsp; Task 2.3](https://github.com/OlgaBelitskaya/it_mini_campus/blob/master/Task_2_3.ipynb)
 ### [&#x1F4D3; &nbsp; Task 2.4](https://github.com/OlgaBelitskaya/it_mini_campus/blob/master/Task_2_4.ipynb)
 
+### [&#x1F4D3; &nbsp; Task 2.5.1](https://github.com/OlgaBelitskaya/it_mini_campus/blob/master/Task_2_5_1.ipynb)
+### [&#x1F4D3; &nbsp; Task 2.5.2](https://github.com/OlgaBelitskaya/it_mini_campus/blob/master/Task_2_5_2.ipynb)
+### [&#x1F4D3; &nbsp; Task 2.5.3](https://github.com/OlgaBelitskaya/it_mini_campus/blob/master/Task_2_5_3.ipynb)
+### [&#x1F4D3; &nbsp; Task 2.5.4](https://github.com/OlgaBelitskaya/it_mini_campus/blob/master/Task_2_5_4.ipynb)
 
 </details>
 
