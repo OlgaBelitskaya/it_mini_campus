@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Task_3_1_1</title>
+    <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+    <script>$(function () {
+    sagecell.makeSagecell({inputLocation:'div.linked',linked:true,evalButtonText:'Run Linked Cells'});
+    sagecell.makeSagecell({inputLocation:'div.sage_html',evalButtonText:'Run HTML'});  
+    sagecell.makeSagecell({inputLocation:'div.sage_js',evalButtonText:'Run JavaScript'});
+    sagecell.makeSagecell({inputLocation:'div.sage_r',evalButtonText:'Run R'});  
+    sagecell.makeSagecell({inputLocation:'div.sage',evalButtonText:'Run SageMath'}); });
+    </script>
+  </head>
+  <style>
+  @import url('https://fonts.googleapis.com/css?family=Orbitron');
+  h1, h2 {color:#3636ff; font-size:110%; font-family:'Orbitron'; text-shadow:5px 5px 5px #aaa;}
+  p, a {color:darkblue; font-size:120%; text-shadow:5px 5px 5px #aaa;}
+  .sagecell .CodeMirror-scroll {min-height:3em; max-height:50em;}
+  </style>  
+  <body>
+    <h1>IT Online Mini Campus. Task 3.1.1</h1>
+    <a href="https://search.rsl.ru/ru/record/01001821198">&#x1F300; Сборник задач по базовой компьютерной подготовке: [Для втузов]</a>
+    <h1>Replacing Arrays with Variables</h1>
+Create an algorithm and a program <br/>
+Представить 3 варианта решений: <br/>
+задан двумерный массив, задано несколько одномерных массивов или заданы переменные, которым можно придать любое значение.
+    <h2>Explore detached cells</h2>
+SageMath &#38; SageMathCell<br/>
+<div class="sage"><script type="text/x-sage">
+#1
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#2
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#3
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#4
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#5
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#6
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#7
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#8
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#9
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#10
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#11
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#12
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#13
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#14
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#15
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#16
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#17
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#18
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#19
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#20
+
+</script></div><br/>
+Задана матрица А с 2 столбцами и 60 строками. 1-й элемент каждой строки представляет абсциссу, а 2-й - ординату одной из 60 точек на плоскости.<br/>Определить номера тех строчек, которые удалены от начала координат более, чем на заданное расстояние Н.
+<div class="sage"><script type="text/x-sage">
+#21
+def check_distance(x,y,h):
+    if x^2+y^2>h^2: return True
+    else: return False
+def create_array(n): return [round(randint(-100,100)/100,3) for i in range(n)]
+H=.7; N=60; A=random_matrix(ZZ,N,2,x=-100,y=100)/100
+AH=[check_distance(A[i,0],A[i,1],H) for i in range(N)]
+AHI=' '.join([str(i+1) for i in range(N) if AH[i]==True]); print('A:%s'%AHI)
+X,Y=create_array(N),create_array(N); XYH=[check_distance(X[i],Y[i],H) for i in range(N)]
+XYHI=' '.join([str(i+1) for i in range(N) if XYH[i]==True]); print('X&Y:%s'%XYHI)
+pa=sum([list_plot([A[i]],title='matrix A',color=hue(int(AH[i])/1.5)) for i in range(N)])
+pa+=sum([text(str(AH[i])[0],(A[i,0],A[i,1]),fontsize=12,color=hue(int(AH[i])/1.5)) for i in range(N)])
+pxy=sum([list_plot([(X[i],Y[i])],title='arrays X&Y',color=hue(int(XYH[i])/1.5)) for i in range(N)])
+pxy+=sum([text(str(XYH[i])[0],(X[i],Y[i]),fontsize=12,color=hue(int(XYH[i])/1.5)) for i in range(N)])
+pc=circle((0,0),H,fill=True,alpha=.4)
+graphics_array([pa+pc,pxy+pc]).show(figsize=10,gridlines=True)
+@interact
+def _(x=(-1,1,.1),y=(-1,1,.1),h=(.9,.1,-.1)):
+    ch=check_distance(x,y,h); col=hue(int(ch)/1.5)
+    p=list_plot([(x,y)],color=col,title='[(x=%.1f,y=%.1f),h=%.1f]'%(x,y,h))
+    p+=circle((0,0),h,fill=True,alpha=.4)+text(str(ch),(x,y),color=col)
+    p.show(figsize=7,gridlines=True,ymin=-1,ymax=1,xmin=-1,xmax=1)
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#22
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#23
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#24
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#25
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#26
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#27
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#28
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#29
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#30
+
+</script></div><br/>    
+  </body>
+</html>

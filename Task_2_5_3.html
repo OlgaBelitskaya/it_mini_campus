@@ -1,0 +1,207 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Task_2_5_3</title>
+    <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+    <script>$(function () {
+    sagecell.makeSagecell({inputLocation:'div.linked',linked:true,evalButtonText:'Run Linked Cells'});
+    sagecell.makeSagecell({inputLocation:'div.sage_html',evalButtonText:'Run HTML'});  
+    sagecell.makeSagecell({inputLocation:'div.sage_js',evalButtonText:'Run JavaScript'});
+    sagecell.makeSagecell({inputLocation:'div.sage_r',evalButtonText:'Run R'});  
+    sagecell.makeSagecell({inputLocation:'div.sage',evalButtonText:'Run SageMath'}); });
+    </script>
+  </head>
+  <style>
+  @import url('https://fonts.googleapis.com/css?family=Orbitron');
+  h1,h2 {color:#3636ff; font-size:110%; font-family:'Orbitron'; text-shadow:5px 5px 5px #aaa;}
+  p,a {color:darkblue; font-size:120%; text-shadow:5px 5px 5px #aaa;}
+  .sagecell .CodeMirror-scroll {min-height:3em; max-height:60em;}
+  body {margin:5px 5px 5px 25px;}
+  </style>  
+  <body>
+    <h1>IT Online Mini Campus. Task 2.5.3</h1>
+    <a href="https://search.rsl.ru/ru/record/01001821198">&#x1F300; Сборник задач по базовой компьютерной подготовке: [Для втузов]</a>
+    <a href="https://www.tutorialspoint.com/compile_pascal_online.php">&#x1F300; Compile Pascal Online</a>
+    <h1>Top-Down Programming for Array Processing</h1>
+Create an algorithm and a program for 5x5 matrices or arrays. <br/>  
+Разработать алгоритм и программу нисходящим способом,<br/>
+предполагая заданной матрицу А из 5 строк и 5 столбцов<br/>
+или одномерные массивы указанной длины.
+    <h2>Explore detached cells</h2>
+SageMath &#38; SageMathCell<br/>
+<div class="sage"><script type="text/x-sage">
+#1
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#2
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#3
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#4
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#5
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#6
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#7
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#8
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#9
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#10
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#11
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#12
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#13
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#14
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#15
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#16
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#17
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#18
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#19
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#20
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#21
+N1=5; A=random_matrix(ZZ,N1,x=-70,y=50)
+N2=7; C=sample(range(-100,100),N2)
+pretty_print(html(r'$A=%s$<br/><br/>$C=%s$'%\
+                  (latex(A),latex(C))))
+def check_matrix_vector(a,c,n1,n2):
+    ind=Permutations(2*list(range(n1)),2).list()
+    q=sum([a[i,j] for [i,j] in ind if a[i,j]>0])
+    s=sum([abs(c[k]) for k in range(n2) if c[k]<0])
+    if q>s: c=[c[k]+q for k in range(n2)]
+    return c,q,s
+C,Q,S=check_matrix_vector(A,C,N1,N2)
+pretty_print(html(r'<br/>'+30*'=-'))
+pretty_print(html(r'<br/>C=%s; Q=%s; S=%s; Q>S: %s'%\
+                  (C,Q,S,Q>S)))
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#22
+#Если в последовательности C1, C2, …, C5 имеются равные элементы, 
+#изменить значения всех ее элементов по правилу: Ci:=Ci+Aii.
+N1=5; S=False; A=N(10*random_matrix(RR,N1),digits=2)
+N2=5; CN=[]; C=[round(random(),1) for i in range(N2)]
+pretty_print(html(r'$A=%s$<br/><br/>$C=%s$'%\
+                  (latex(A),latex(C))))
+for i in range(N1):
+    CN.append(C[i]+A[i,i])
+    for j in range(i+1,N1):
+        if C[i]==C[j]: S=True
+if S: C=CN
+pretty_print(html(r'$C=%s$'%latex(C)))
+</script></div><br/>
+<div><pre><code class="pascal">
+//#22 Pascal
+Program Lab13;
+type ReArr=array [0..1000] of real;
+var C,CN: ReArr;
+var i,j: integer;
+var c1,c2: boolean;
+var SC,SA,SCN,st: string;
+function st2ar(a:string;n:integer): ReArr;
+var k: integer;
+var x: real;
+var ka: string;
+begin
+    st2ar[n]:=0;
+    for k:=1 to n do
+    begin 
+        if k=n then ka:=a else 
+            ka:=copy(a,1,pos(' ',a)-1); 
+        val(ka,x); delete(a,1,pos(' ',a));
+        if ((x<>0) or ((x=0) and (ka='0'))) then
+            st2ar[k-1]:=x
+        else
+        begin
+            st2ar[n]:=1; break;
+        end;
+    end;
+end;
+begin
+    writeln('Лаб.13':38);
+    c1:=true; c2:=false; SCN:='';
+    readln(SC); C:=st2ar(SC,5);
+    writeln('Исходный массив C: ',SC);
+    if C[5]=1 then c1:=false; 
+    writeln('Матрица A: ');
+    for i:=1 to 5 do
+    begin 
+        readln(SA); writeln(SA); 
+        CN[i-1]:=st2ar(SA,5)[i-1];
+        if st2ar(SA,5)[5]=1 then c1:=false;
+        CN[i-1]:=CN[i-1]+C[i-1];
+        str(CN[i-1]:5:2,st); SCN:=concat(SCN,st);        
+        for j:=1 to 5 do
+        begin
+            if ((i>j) and (C[i-1]=C[j-1])) then
+                c2:=true;
+        end;
+    end;
+    if c2 then SC:=SCN;
+    if c1 then writeln('Полученный массив C: ',SC)
+    else writeln('Данные не корректны');
+end.
+</code></pre></div>
+<div class="sage"><script type="text/x-sage">
+#23
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#24
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#25
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#26
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#27
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#28
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#29
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#30
+</script></div><br/>    
+  </body>
+</html>
