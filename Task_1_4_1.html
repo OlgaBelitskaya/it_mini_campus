@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Task_1_4_1</title>
+    <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+    <script>$(function () {
+    sagecell.makeSagecell({inputLocation:'div.linked',linked:true,evalButtonText:'Run Linked Cells'});
+    sagecell.makeSagecell({inputLocation:'div.sage_html',evalButtonText:'Run HTML'});  
+    sagecell.makeSagecell({inputLocation:'div.sage_js',evalButtonText:'Run JavaScript'});
+    sagecell.makeSagecell({inputLocation:'div.sage_r',evalButtonText:'Run R'});  
+    sagecell.makeSagecell({inputLocation:'div.sage',evalButtonText:'Run SageMath'}); });
+    </script>
+  </head>
+  <style>
+  @import url('https://fonts.googleapis.com/css?family=Orbitron');
+  h1, h2 {color:#3636ff; font-size:110%; font-family:'Orbitron'; text-shadow:5px 5px 5px #aaa;}
+  p, a {color:darkblue; font-size:120%; text-shadow:5px 5px 5px #aaa;}
+  .sagecell .CodeMirror-scroll {min-height:3em; max-height:50em;}
+  </style>  
+  <body>
+    <h1>IT Online Mini Campus. Task 1.4.1</h1>
+    <a href="https://search.rsl.ru/ru/record/01001821198">&#x1F300; Сборник задач по базовой компьютерной подготовке:[Для втузов]</a>
+    <h1>Processing of One-Dimensional Arrays by One Cycle</h1>
+Create an algorithm and a program
+    <h2>Explore detached cells</h2>
+SageMath &#38; SageMathCell<br/>
+<div class="sage"><script type="text/x-sage">
+#1
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#2
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#3
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#4
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#5
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#6
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#7
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#8
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#9
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#10
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#11
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#12
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#13
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#14
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#15
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#16
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#17
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#18
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#19
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#20
+X=[randint(1,99) for i in [0..10]]
+Y=[X[0]*X[i] for i in [1..len(X)-1]]
+pretty_print(X,'=>',Y)
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#21
+def sum_arr(X):
+    T=[X[0]]
+    for i in [1..len(X)-1]: T.append(T[i-1]+X[i])
+    return T
+X1=["♔","♕","♖","♗","♘","♙"]; X2=[randint(1,99) for i in [0..10]]
+pretty_print('string summation'); pretty_print(X1,'->',sum_arr(X1))
+pretty_print('number summation'); pretty_print(X2,'->',sum_arr(X2))
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+# Variant 1
+V=0; N=5; c=0; s='Данные не корректны'
+R=[282.26,246.19,943.02,902.51,245.93]
+H=[112.35,184.01,0,1414.61,91.32]
+for i in [0..N-1]: 
+    if (R[i]<=0 or H[i]<0 or 2*R[i]<H[i]):
+        pretty_print(s); c=1; break   
+    else: V+=pi*H[i]^2*(R[i]-H[i]/3)
+t=[['radiuses',html(ascii_art('%s'%R))],
+   ['heights',html(ascii_art('%s'%H))],
+   ['volume',html(ascii_art('<p>$%s$</p>'\
+   %[latex(V),latex(V.n())]))]]
+if c==0: show(table(t))
+# Variant 2
+V=0; N=7; R,H=[],[]
+for i in [0..N-1]: 
+    R+=[round(random()*1000,2)]
+    H+=[round(2*random()*R[i],2)]
+    V+=pi*H[i]^2*(R[i]-H[i]/3)
+t=[['radiuses',html(ascii_art('%s'%R))],
+   ['heights',html(ascii_art('%s'%H))],
+   ['volume',html(ascii_art('<p>$%s$</p>'\
+   %[latex(V),latex(V.n())]))]]
+table(t)
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#23
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#24
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#25
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#26
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#27
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#28
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#29
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+#30
+</script></div><br/>
+  </body>
+</html>
