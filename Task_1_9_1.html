@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Task_1_9_1</title>
+    <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+    <script>$(function () {
+    sagecell.makeSagecell({inputLocation:'div.linked',linked:true,evalButtonText:'Run Linked Cells'});
+    sagecell.makeSagecell({inputLocation:'div.sage_html',evalButtonText:'Run HTML'});  
+    sagecell.makeSagecell({inputLocation:'div.sage_js',evalButtonText:'Run JavaScript'});
+    sagecell.makeSagecell({inputLocation:'div.sage_r',evalButtonText:'Run R'});  
+    sagecell.makeSagecell({inputLocation:'div.sage',evalButtonText:'Run SageMath'}); });
+    </script>
+  </head>
+  <style>
+  @import url('https://fonts.googleapis.com/css?family=Orbitron');
+  h1, h2 {color:#3636ff; font-size:110%; font-family:'Orbitron'; text-shadow:5px 5px 5px #aaa;}
+  p, a {color:darkblue; font-size:120%; text-shadow:5px 5px 5px #aaa;}
+  .sagecell .CodeMirror-scroll {min-height:3em; max-height:50em;}
+  </style>  
+  <body>
+    <h1>IT Online Mini Campus. Task 1.9.1</h1>
+    <a href="https://search.rsl.ru/ru/record/01001821198">&#x1F300; Сборник задач по базовой компьютерной подготовке:[Для втузов]</a>
+    <h1>Logical Expressions</h1>
+Prove the logical values (true or false) of the following expressions
+    <h2>Explore detached cells</h2>
+SageMath &#38; SageMathCell <br/>
+<div class="sage"><script type="text/x-sage">
+t=[['n','expression','variables','value']]
+le1=lambda x,y:(x<=2)|(2*y==10)&(x/4!=.25)|(x*y>=0)
+t.append([1,'(x<=2)|(2*y==10)&(x/4!=0.25)|(x*y>=0)', 'x=1; y=20',le1(1,20)])
+le2=lambda a,b,c:(not(a>b))|(b>c)|(b/c>3)&(not(b+c==1))
+t.append([2,'(not(a>b))|(b>c)|(b/c>3)&(not(b+c==1))','a=1; b=2; c=3',le2(1,2,3)])
+le3=lambda x,y,z:(x+y!=3)|(not(x/y<=2))|(z==3*x)&(y>x+1)
+t.append([3,'(x+y!=3)|(not(x/y<=2))|(z==3*x)&(y>x+1)','x=1; y=2; x=3',le3(1,2,3)])
+le4=lambda x,a,b:(x/a==1)|(b/(a+b)<1)&(not(b==a))|(x!=6)
+t.append([4,'(x/a==1)|(b/(a+b)<1)&(not(b==a))|(x!=6)','x=6; a=2; b=3',le4(6,2,3)])
+le5=lambda x,y,z:(not(x*y*z==1))|(x<z)&(x/y!=2)|(x+y>z-1)
+t.append([5,'(not(x*y*z==1))|(x< z)&(x/y!=2)|(x+y>z-1)','x=0.25; y=2; z=2',le5(0.25,2,2)])
+le6=lambda x,y,z:(x*y==3)|(x<z)|(not(x+2>=z+y))&(x/z>y)
+t.append([6,'(x*y==3)|(x< z)|(not(x+2>=z+y))&(x/z>y)','x=2; y=1.5; z=2',le6(2,1.5,2)])
+le7=lambda a,b,c:(a<=b)&(not(a/c==2))|(c<=a+b)&(c!=a/2)
+t.append([7,'(a<=b)&(not(a/c==2))|(c<=a+b)&(c!=a/2)','a=2; b=4; c=1',le7(2,4,1)])
+le8=lambda x,y,z:(not(x+y==1))|(x-y==-.5)&(x>1)|(z<4)
+t.append([8,'(not(x+y==1))|(x-y==-.5)&(x>1)|(z<4)','x=0.25; y=0.75; z=4',le8(.25,.75,4)])
+le9=lambda a,b,c:(a-b==c*a)&(b<=c)|(not(a<b/c))&(b!=c)
+t.append([9,'(a-b==c*a)&(b<=c)|(not(a< b/c))&(b!=c)','a=1; b=3; c=2',le9(1,3,2)])
+le10=lambda a,b,c:(a/.5<b+c)|(c==b)&(b!=a*c)|(not(a!=0))
+t.append([10,'(a/0.5< b+c)|(c==b)&(b!=a*c)|(not(a!=0))','a=1; b=2; c=3',le10(1,2,3)])
+table(t)
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+t=[['n','expression','variables','value']]
+le11=lambda a,b,c:(a==b)|(not(c==2))|(a+c<b)&(a/b<=c+2)
+t.append([11,'(a==b)|(not(c==2))|(a+c< b)&(a/b<=c+2)','a=1; b=3; c=2',
+          le11(1,3,2)])
+le19=lambda a,b,c,d,f:(not a)|b|(d+f!=0)&(not(d>0))|(a|c&b)
+t.append([19,'(not a)|b|(d+f!=0)&(not(d>0))|(a|c&b)','a=True; b=False; c=True; d=-1; f=1',
+          le19(True,False,True,-1,1)])
+le20=lambda a,b,c,d:a&b|(not(c))|(d!=1)&(a|b&c)&(d!=0)
+t.append([20,'a&b|(not(c))|(d!=1)&(a|b&c)&(d!=0)','a=True; b=True; c=False; d=2',
+          le20(True,True,False,2)])
+table(t)
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+t=[['n','expression','variables','value']]
+le21=lambda x,y,t,p:(not t)&p|(x+.5!=y)&(not(t|p))|(x+y<=0)
+t.append([21,'(not t)&p|(x+.5!=y)&(not(t|p))|(x+y<=0)','x=0.5; y=1; t=True; p=False',
+          le21(.5,1,True,False)])
+le22=lambda a,b,c,q,r:(q+2>r)&(a&b|c)|(not(r!=q))|(q>=1)
+t.append([22,'(q+2>r)&(a&b|c)|(not(r!=q))|(q>=1)','a=False; b=False; c=True; q=1; r=2',
+          le22(False,False,True,1,2)])
+table(t)
+</script></div><br/>
+Python &#38; SageMathCell <br/>
+<div class="sage"><script type="text/x-sage">
+import numpy,pylab,random
+
+</script></div><br/>
+<div class="sage"><script type="text/x-sage">
+import numpy,pylab,random
+
+</script></div><br/>
+R &#38; SageMathCell <br/>
+<div class="sage_r"><script type="text/x-sage">
+%%r
+
+</script></div><br/>
+<div class="sage_r"><script type="text/x-sage">
+%%r
+
+</script></div><br/>
+HTML, JavaScript &#38; SageMathCell (Click “Run HTML” twice!)<br/>
+<div class="sage_html"><script type="text/x-sage">
+%%html
+<script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'/>
+<div id='googlechart' style='width:500px; height:500px;'/><script>
+
+</script></div><br/>
+<div class="sage_html"><script type="text/x-sage">
+%%html
+<script src='https://d3js.org/d3.v4.min.js'/>
+<svg id='d3chart' style='background-color:silver; width:500px; height:500px;'/><script>
+
+</script></div><br/>
+<div class="sage_html"><script type="text/x-sage">
+%%html
+<script src='https://cdn.plot.ly/plotly-latest.min.js'/>
+<div id='plotlychart' style='width:500px; height:500px;'/><script>
+
+</script></div><br/>      
+    <h2>Explore linked cells</h2>
+Python, R, JavaScript, HTML &#38; SageMathCell <br/>     
+<div class="linked"><script type="text/x-sage">
+
+</script></div><br/>
+<div class="linked"><script type="text/x-sage">
+
+</script></div><br/>
+<div class="linked"><script type="text/x-sage">
+
+</script></div><br/>
+<div class="linked"><script type="text/x-sage">
+
+</script></div><br/>
+<div class="sage_html"><script type="text/x-sage">
+%%html
+<script src='https://code.highcharts.com/highcharts.js'/>
+<div id='highcharts' style='height:500px; width:500px; margin:0 auto'>
+the javascript cell is launching here...</div>
+</script></div><br/>
+<div class="sage_js"><script type="text/x-sage">
+%%javascript
+
+</script></div><br/>    
+  </body>
+</html>
